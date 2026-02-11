@@ -9,7 +9,7 @@ document.getElementById("contact-form").addEventListener("submit", function (e) 
 
   emailjs.sendForm(
     "service_website",     // Service ID
-    "y4lq4z7",     // ⚠️ Replace with YOUR Template ID
+    "templates/y4lq4z7",     // ⚠️ Replace with YOUR Template ID
     this
   ).then(
     function () {
