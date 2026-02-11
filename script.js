@@ -1,25 +1,23 @@
-(function(){
-  emailjs.init("Kw9rNFgZ0913SuCne"); // Public key
+// Init EmailJS
+(function () {
+  emailjs.init("Kw9rNFgZ0913SuCne"); // Your Public Key
 })();
 
-document.getElementById("contact-form").addEventListener("submit", function(e){
-  e.preventDefault(); // Page reload stop
+// Form Submit
+document.getElementById("contact-form").addEventListener("submit", function (e) {
+  e.preventDefault();
 
   emailjs.sendForm(
-    "service_website",
-    "template_y4lq4z7",
+    "service_website",     // Service ID
+    "y4lq4z7",     // ⚠️ Replace with YOUR Template ID
     this
   ).then(
-    function(){
-      alert("Message sent successfully ✅");
+    function () {
+      alert("Message Sent Successfully ✅");
+      document.getElementById("contact-form").reset();
     },
-    function(error){
+    function (error) {
       alert("Failed ❌ " + error.text);
     }
   );
 });
-emailjs.sendForm(
-  "service_website",
-  "y4lq4z7",   // ✅ sirf ID
-  this
-)
